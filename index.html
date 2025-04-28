@@ -1,4 +1,6 @@
 
+// PriestTV Blocks - A Simple Tetris Game inside your Quote Card Frame with Controls on the Left
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,22 +11,41 @@
     body {
       margin: 0;
       display: flex;
-      justify-content: center;
-      align-items: center;
       height: 100vh;
       background: #1a0000;
+      font-family: sans-serif;
+      color: #fff;
+    }
+    #controls {
+      width: 200px;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+    }
+    #controls img {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+    #controls p {
+      font-size: 14px;
+      text-align: center;
+      line-height: 1.4;
     }
     #game-container {
+      flex: 1;
       position: relative;
       background: url('background.png') no-repeat center;
       background-size: cover;
-      width: 400px;
-      height: 600px;
+      width: 600px;
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     canvas {
-      position: absolute;
-      top: 10%;
-      left: 10%;
       width: 80%;
       height: 80%;
       background: rgba(0,0,0,0.8);
@@ -33,6 +54,15 @@
   </style>
 </head>
 <body>
+  <div id="controls">
+    <img src="logo.png" alt="Gerrod Priest TV Logo">
+    <p>
+      <strong>How to Play:</strong><br>
+      Move Left/Right: &#8592; / &#8594;<br>
+      Drop: &#8595;<br>
+      Rotate: Q / W
+    </p>
+  </div>
   <div id="game-container">
     <canvas id="tetris" width="200" height="400"></canvas>
   </div>
